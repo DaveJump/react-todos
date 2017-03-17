@@ -4,9 +4,9 @@ require('styles/todos.scss');
 import React from 'react';
 
 //components
-import TodosList from './TodosList';
-import TodosInput from './TodosInput';
-import TodosFilter from './TodosFilter';
+import TodosList from 'components/TodosList';
+import TodosInput from 'components/TodosInput';
+import TodosFilter from 'components/TodosFilter';
 
 //controller
 import { updateTodo, addTodo, deleteTodo } from '../controller/controller';
@@ -32,19 +32,16 @@ class TodosBox extends React.Component {
 		return false;
 	}
 	filterTodo(filter){
-		let filteredTodos = getItem('todos').filter(todo => {
-			switch(filter){
-				case 'all':
+		let AllTodos = getItem('todos') || [];
+		let filteredTodos = AllTodos.filter(todo => {
+			if(filter == 'all'){
+				return todo;
+			}else if(filter == 'done'){
+				if(todo.done)
 					return todo;
-					break;
-				case 'done':
-					if(todo.done)
-						return todo;
-					break;
-				case 'undone':
-					if(!todo.done)
-						return todo;
-					break;
+			}else if(filter == 'undone'){
+				if(!todo.done)
+					return todo;
 			}
 		});
 		this.setState({ filter, todos: filteredTodos });

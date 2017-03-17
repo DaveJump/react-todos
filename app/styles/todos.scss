@@ -1,14 +1,16 @@
 body{
-  font:{
-    size: 14px;
-    family: '微软雅黑',arial;
-  };
+  font-size: 14px;
   color: #555;
   padding-top: 10px;
 }
 *{
   user-select: none;
   -webkit-user-select: none;
+}
+body,
+input,
+input::-webkit-input-placeholder{
+  font-family: '微软雅黑',arial
 }
 input::-webkit-input-placeholder{
   color: #999;

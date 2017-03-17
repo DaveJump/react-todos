@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const appPath = path.join(__dirname, '/app');
-const publicPath = '/build/';
+const publicPath = '/assets/';
 const port = 3000;
 
 module.exports = {
@@ -14,13 +14,12 @@ module.exports = {
     './app/index.js'
   ],
   output: {
-    path: __dirname,
+    path: path.resolve(__dirname,'build'),
     publicPath: publicPath,
-    filename: './build/app.js'
+    filename: 'app.js'
   },
   devtool: 'eval',
   devServer: {
-    contentBase: './app/',
     historyApiFallback: true,
     hot: true,
     port: port,
@@ -40,7 +39,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: ['react-hot-loader','babel-loader?presets[]=es2015&presets[]=react']
+        loader: 'react-hot-loader!babel-loader!eslint-loader'
       },
       {
         test: /\.css$/,
@@ -55,5 +54,8 @@ module.exports = {
         loader: 'url-loader?limit=8192'
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
 }
