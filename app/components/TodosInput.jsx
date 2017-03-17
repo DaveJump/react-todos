@@ -7,7 +7,7 @@ const TodosInput = props => {
 				type="text"
 				placeholder="What would you want to do?"
 				onKeyUp={e => {
-					if(e.keyCode == 13 && e.target.value.trim() !== ''){
+					if (e.keyCode == 13 && e.target.value.trim() !== '') {
 						props.addTodo(e);
 					}
 				}}

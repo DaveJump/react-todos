@@ -14,7 +14,7 @@ module.exports = {
     './app/index.js'
   ],
   output: {
-    path: path.resolve(__dirname,'build'),
+    path: path.resolve(__dirname, 'build'),
     publicPath: publicPath,
     filename: 'app.js'
   },

@@ -6,17 +6,17 @@ const TodosFilter = props => {
       className="todos_filter">
       <span
         className={props.filter == 'all' ? 'current' : ''}
-        onClick={() => {props.filterTodo('all')}}>
+        onClick={() => { props.filterTodo('all') }}>
         All
       </span>
       <span
         className={props.filter == 'done' ? 'current' : ''}
-        onClick={() => {props.filterTodo('done')}}>
+        onClick={() => { props.filterTodo('done') }}>
         Done
       </span>
       <span
         className={props.filter == 'undone' ? 'current' : ''}
-        onClick={() => {props.filterTodo('undone')}}>
+        onClick={() => { props.filterTodo('undone') }}>
         Undone
       </span>
     </section>

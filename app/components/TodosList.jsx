@@ -8,17 +8,17 @@ const TodosList = props => {
 					props.todos.map((todo, index) => {
 						return (
 							<li key={`todo-${index}`}
-									className={todo.done ? 'done' : ''}
-									onDoubleClick={e => {
-										if(e.target == e.currentTarget){
-											if(!todo.editing){
-												todo.editing = !todo.editing;
-											}
-											props.editTodo(e, todo.editing, todo.content, index);
-											e.preventDefault();
-											e.stopPropagation();
+								className={todo.done ? 'done' : ''}
+								onDoubleClick={e => {
+									if (e.target == e.currentTarget) {
+										if (!todo.editing) {
+											todo.editing = !todo.editing;
 										}
-									}}>
+										props.editTodo(e, todo.editing, todo.content, index);
+										e.preventDefault();
+										e.stopPropagation();
+									}
+								}}>
 								<input
 									type="checkbox"
 									checked={todo.done ? 'checked' : ''}
@@ -29,12 +29,12 @@ const TodosList = props => {
 								/>
 								<input
 									type="text"
-									style={{display: todo.editing ? 'block' : 'none'}}
+									style={{ display: todo.editing ? 'block' : 'none' }}
 									onBlur={() => {
 										props.cancelEdit(index);
 									}}
 									onKeyUp={e => {
-										if(e.keyCode == 13){
+										if (e.keyCode == 13) {
 											let edited_value = e.target.value.trim();
 											props.doneEdit(edited_value, todo, index);
 										}

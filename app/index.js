@@ -6,6 +6,6 @@ import TodosBox from 'components/TodosBox';
 const initTodos = [];
 // Render the main component into the dom
 ReactDOM.render(
-	<TodosBox initTodos={initTodos}/>,
+	<TodosBox initTodos={initTodos} />,
 	document.getElementById('app')
 );
