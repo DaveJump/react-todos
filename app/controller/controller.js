@@ -1,4 +1,4 @@
-import { getItem, setItem } from '../utils/storage';
+import { getItem, setItem } from 'utils/storage';
 
 function updateTodo(new_todo, modelName, callback){
   let todolist = getTodos('todos');

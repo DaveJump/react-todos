@@ -10,7 +10,7 @@ import TodosFilter from 'components/TodosFilter';
 
 //controller
 import { updateTodo, addTodo, deleteTodo } from '../controller/controller';
-import { getItem } from '../utils/storage';
+import { getItem } from 'utils/storage';
 
 class TodosBox extends React.Component {
 	constructor(props){

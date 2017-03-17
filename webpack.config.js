@@ -31,6 +31,8 @@ module.exports = {
     alias: {
       components: `${appPath}/components/`,
       styles: `${appPath}/styles/`,
+      utils: `${appPath}/utils/`,
+      controller: `${appPath}/controller/`,
       'react/lib/ReactMount': 'react-dom/lib/ReactMount'
     }
   },
